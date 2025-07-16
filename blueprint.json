@@ -9,7 +9,7 @@
 		"php": "8.0",
 		"wp": "latest"
 	},
-	"landingPage": "/wp-admin/customize.php",
+	"landingPage": "/wp-admin/themes.php",
 	"login": true,
 	"steps": [
 		{
