@@ -1,6 +1,5 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "landingPage": "/wp-admin/admin.php?page=twentig",
   "login": true,
   "preferredVersions": {
     "php": "8.3",
