@@ -16,7 +16,20 @@
         "blogname": "Playground"
       }
     },
-   
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "twentig"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php add_filter( 'twentig_enable_activation_redirect', '__return_false' );"
+    },
     {
       "step": "installTheme",
       "themeData": {
