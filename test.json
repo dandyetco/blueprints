@@ -2,7 +2,7 @@
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "preferredVersions": {
     "php": "latest",
-    "wp": "7.0-RC2"
+    "wp": "beta"
   },
   "login": true,
   "landingPage": "/wp-admin/edit.php?post_type=page",
@@ -28,7 +28,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php add_filter( 'twentig_enable_activation_redirect', '__return_false' );"
+      "code": "<?php delete_transient( '_twentig_activation_redirect' );"
     },
     {
       "step": "installTheme",
