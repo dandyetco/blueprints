@@ -28,7 +28,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php add_filter( 'twentig_enable_activation_redirect', '__return_false' );"
+      "code": "<?php require_once '/wordpress/wp-load.php'; delete_transient( '_twentig_activation_redirect' );"
     },
     {
       "step": "installTheme",
