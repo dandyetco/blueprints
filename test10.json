@@ -1,0 +1,44 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "latest",
+    "wp": "beta"
+  },
+  "login": true,
+  "landingPage": "/wp-admin/edit.php?post_type=page",
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Playground"
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://github.com/twentig/twentig-one/releases/latest/download/twentig-one.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "twentig"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; delete_transient( '_twentig_activation_redirect' ); $posts = get_posts(array('numberposts' => -1, 'post_type' => array('post', 'page'), 'post_status' => 'any')); foreach ($posts as $post) { wp_delete_post($post->ID, true); }"
+    }
+  ]
+}
