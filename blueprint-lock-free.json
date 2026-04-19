@@ -38,7 +38,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php require_once '/wordpress/wp-load.php'; delete_transient('_twentig_activation_redirect'); $items = get_posts(array('numberposts' => -1, 'post_type' => array('post', 'page'), 'post_status' => 'any')); foreach ($items as $item) { wp_delete_post($item->ID, true); }"
+      "code": "<?php require_once '/wordpress/wp-load.php'; delete_transient('_twentig_activation_redirect'); $items = get_posts(array('numberposts' => -1, 'post_type' => array('post','page'), 'post_status' => 'any')); foreach ($items as $item) { wp_delete_post($item->ID, true); }"
     },
     {
       "step": "importWxr",
@@ -46,6 +46,10 @@
         "resource": "url",
         "url": "https://raw.githubusercontent.com/dandyetco/blueprints/main/playground.xml"
       }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; $page = get_page_by_path('free'); if ($page) { update_option('show_on_front', 'page'); update_option('page_on_front', $page->ID); }"
     }
   ]
 }
