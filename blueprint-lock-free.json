@@ -44,7 +44,7 @@
       "step": "importWxr",
       "file": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/dandyetco/blueprints/main/playground.xml"
+        "url": "https://raw.githubusercontent.com/dandyetco/blueprints/main/pages.xml"
       }
     },
     {
