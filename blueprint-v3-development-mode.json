@@ -29,7 +29,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php $config = ABSPATH . 'wp-config.php'; if ( file_exists( $config ) && is_writable( $config ) ) { $contents = file_get_contents( $config ); if ( false === strpos( $contents, 'WP_DEVELOPMENT_MODE' ) ) { $define = \"define( 'WP_DEVELOPMENT_MODE', 'all' );\\n\"; $marker = \"/* That's all, stop editing! Happy publishing. */\"; if ( false !== strpos( $contents, $marker ) ) { $contents = str_replace( $marker, $define . $marker, $contents ); } else { $contents = preg_replace( '/^<\\?php\\s*/', \"<?php\\n\" . $define, $contents, 1 ); } file_put_contents( $config, $contents ); } } ?>"
+      "code": "<?php $config = '/wordpress/wp-config.php'; if ( file_exists( $config ) && is_writable( $config ) ) { $contents = file_get_contents( $config ); if ( false === strpos( $contents, 'WP_DEVELOPMENT_MODE' ) ) { $define = \"define( 'WP_DEVELOPMENT_MODE', 'all' );\\n\"; $marker = \"/* That's all, stop editing! Happy publishing. */\"; if ( false !== strpos( $contents, $marker ) ) { $contents = str_replace( $marker, $define . $marker, $contents ); } else { $contents = preg_replace( '/^<\\?php\\s*/', \"<?php\\n\" . $define, $contents, 1 ); } file_put_contents( $config, $contents ); } } ?>"
     },
     {
       "step": "runPHP",
